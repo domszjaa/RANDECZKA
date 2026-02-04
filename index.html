@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacer?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 40px;
+    }
+
+    .option {
+      font-size: 48px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 15px 30px;
+      border-radius: 20px;
+    }
+
+    #yes {
+      color: white;
+      background-color: hotpink;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+    }
+
+    #yes:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 35px rgba(255, 105, 180, 0.9);
+    }
+
+    #no {
+      color: #666;
+      background-color: #e0e0e0;
+      position: absolute;
+    }
+
+    .gif {
+      width: 300px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Idziemy na spacer?</h1>
+
+  <div class="options">
+    <div id="yes" class="option" onclick="alert('Yay! 🐕💖 Idziemy!')">
+      TAK
+    </div>
+  </div>
+
+  <div id="no" class="option">
+    NIE
+  </div>
+
+  <img
+    class="gif"
+    src="https://media.giphy.com/media/v6aOjy0Qo1fIA/giphy.gif"
+    alt="Słodki piesek"
+  >
+
+  <script>
+    const no = document.getElementById("no");
+
+    no.addEventListener("mouseover", () => {
+      const maxX = window.innerWidth - no.offsetWidth;
+      const maxY = window.innerHeight - no.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      no.style.left = x + "px";
+      no.style.top = y + "px";
+    });
+  </script>
+
+</body>
+</html>
